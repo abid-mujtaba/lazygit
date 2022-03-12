@@ -25,7 +25,7 @@ func (gui *Gui) refreshStatus() {
 	status := ""
 
 	if currentBranch.IsRealBranch() {
-		status += presentation.ColoredBranchStatus(currentBranch) + " "
+		status += presentation.ColoredBranchStatus(currentBranch, gui.Tr) + " "
 	}
 
 	workingTreeState := gui.Git.Status.WorkingTreeState()
@@ -70,7 +70,7 @@ func (gui *Gui) handleStatusClick() error {
 	}
 
 	cx, _ := gui.Views.Status.Cursor()
-	upstreamStatus := presentation.BranchStatus(currentBranch)
+	upstreamStatus := presentation.BranchStatus(currentBranch, gui.Tr)
 	repoName := utils.GetCurrentRepoName()
 	workingTreeState := gui.Git.Status.WorkingTreeState()
 	switch workingTreeState {

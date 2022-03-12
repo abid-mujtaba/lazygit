@@ -454,6 +454,7 @@ type TranslationSet struct {
 	LcOpenCommitInBrowser               string
 	LcViewBisectOptions                 string
 	ConfirmRevertCommit                 string
+	UpstreamGone                        string
 	Actions                             Actions
 	Bisect                              Bisect
 }
@@ -1028,6 +1029,7 @@ func EnglishTranslationSet() TranslationSet {
 		LcOpenCommitInBrowser:               "open commit in browser",
 		LcViewBisectOptions:                 "view bisect options",
 		ConfirmRevertCommit:                 "Are you sure you want to revert {{.selectedCommit}}?",
+		UpstreamGone:                        "↑gone",
 		Actions: Actions{
 			// TODO: combine this with the original keybinding descriptions (those are all in lowercase atm)
 			CheckoutCommit:                    "Checkout commit",

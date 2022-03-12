@@ -69,7 +69,7 @@ func (gui *Gui) branchesListContext() IListContext {
 		OnRenderToMain:  OnFocusWrapper(gui.branchesRenderToMain),
 		Gui:             gui,
 		GetDisplayStrings: func(startIdx int, length int) [][]string {
-			return presentation.GetBranchListDisplayStrings(gui.State.Branches, gui.State.ScreenMode != SCREEN_NORMAL, gui.State.Modes.Diffing.Ref)
+			return presentation.GetBranchListDisplayStrings(gui.State.Branches, gui.State.ScreenMode != SCREEN_NORMAL, gui.State.Modes.Diffing.Ref, gui.Tr)
 		},
 		SelectedItem: func() (ListItem, bool) {
 			item := gui.getSelectedBranch()
